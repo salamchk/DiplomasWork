@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiplomasWork.MainPage">
+    <Grid>
+        <Frame BackgroundColor="{StaticResource Primary}" Padding="24" CornerRadius="0">
+            <Label Text="Robotics Control" TextColor="{StaticResource EggYellow}" HorizontalTextAlignment="Center" FontSize="36"/>
+        </Frame>
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+            <Button x:Name="btnStart" Style="{StaticResource ButtonStyle}" Text="Start" FontSize="20"
+                    CornerRadius="25" HeightRequest="50" WidthRequest="200" Clicked="Button_Clicked"/>
+            <Button x:Name="btnConnect" Style="{StaticResource ButtonStyle}" Text="Connect" FontSize="20"
+                    CornerRadius="25" HeightRequest="50" WidthRequest="200" Clicked="btnConnect_Clicked"/>
+            <Button x:Name="btnClose" Style="{StaticResource ButtonStyle}" Text="Close" FontSize="20"
+                    CornerRadius="25" HeightRequest="50" WidthRequest="200" Clicked="btnClose_Clicked"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

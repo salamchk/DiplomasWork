@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiplomasWork.App">
+    <Application.Resources>
+        <Color x:Key="Primary">#262626</Color>
+        <Color x:Key="LightRed">#fb3640</Color>
+        <Color x:Key="EggYellow">#fdca40</Color>
+        <Color x:Key="LightPurple">#a799b7</Color>
+        <Color x:Key="DirtyGreen">#8fd9a8</Color>
+
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource EggYellow}"/>
+            <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+        </Style>
+
+        <Style x:Key="CancelButonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+            <Setter Property="TextColor" Value="{StaticResource EggYellow}"/>
+        </Style>
+        <Style x:Key="MoveButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource EggYellow}"/>
+            <Setter Property="ImageSource" Value="@drawable/arrow"/>
+            <Setter Property="CornerRadius" Value="100"/>
+            <Setter Property="HeightRequest" Value="100"/>
+            <Setter Property="WidthRequest" Value="100"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+        </Style>
+    </Application.Resources>
+</Application>

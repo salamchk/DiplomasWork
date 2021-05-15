@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiplomasWork.Views.ControlView">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Primary}" >
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="12*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0"  >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <ImageButton BackgroundColor="Transparent" Grid.Column="0" 
+                                 Source="@drawable/BackButton" Aspect="AspectFit" Margin="2" 
+                                 Clicked="ImageButton_Clicked" />
+                    
+                    <Label  Grid.Column="1" Text="Control Page" 
+                            TextColor="{StaticResource EggYellow}" FontSize="22" VerticalOptions="CenterAndExpand" 
+                           HorizontalOptions="CenterAndExpand"/>
+                    
+                    <ImageButton BackgroundColor="Transparent" Grid.Column="2"
+                                 Source="@drawable/configuration" Aspect="AspectFit" Margin="2" 
+                                 Clicked="ImageButton_Clicked_1" />
+                </Grid>
+                
+                
+                <Grid Grid.Row="1" Margin="10" x:Name="Content" IsVisible="false">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        
+                  
+                        <Grid Grid.Column="0">
+                            <Button x:Name="TurnLeftButton" 
+                                    Style="{StaticResource MoveButtonStyle}"
+                                    Rotation="180" Pressed="TurnLeftButton_Pressed" Released="OnSetForwardPosition"/>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Button x:Name="TurnRightButton" 
+                                    Style="{StaticResource MoveButtonStyle}"
+                                   Pressed="TurnRightButton_Pressed" Released="OnSetForwardPosition"/>
+                        </Grid>
+                    </Grid>
+                    
+                    <Frame Grid.Column="1" BackgroundColor="Transparent" BorderColor="{StaticResource DirtyGreen}"
+                           CornerRadius="20">
+                        <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                            <StackLayout >
+                                <Switch x:Name="AutoSwitch" Toggled="AutoSwitch_Toggled" 
+                                        OnColor="{StaticResource DirtyGreen}" ThumbColor="{StaticResource DirtyGreen}"/>
+                                <Label Text="Auto" TextColor="{StaticResource DirtyGreen}" HorizontalOptions="Center"
+                                   FontSize="20"/>
+                                <Switch x:Name="Lights" Toggled="Switch_Toggled"  OnColor="{StaticResource EggYellow}" ThumbColor="{StaticResource EggYellow}"/>
+                                <Label Text="Lights" TextColor="{StaticResource EggYellow}" HorizontalOptions="Center"
+                                   FontSize="20"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                    
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        
+                        <Grid Grid.Row="0">
+                            <Button x:Name="MoveForwardButton" Style="{StaticResource MoveButtonStyle}" Rotation="-90"  Pressed="MoveForwardButton_Pressed" Released="OnStopMoving"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Button x:Name="MoveBackButton" Style="{StaticResource MoveButtonStyle}" Rotation="90"  Pressed="MoveBackButton_Pressed" Released="OnStopMoving"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

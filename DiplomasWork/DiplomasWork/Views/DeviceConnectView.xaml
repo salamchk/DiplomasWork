@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiplomasWork.Views.DeviceConnectView">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Primary}">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="7*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton BackgroundColor="Transparent" Grid.Column="0" Source="@drawable/BackButton" Aspect="AspectFit" Margin="10" 
+                                 Clicked="ImageButton_Clicked" />
+                    <Label  Grid.Column="1" Text="Bluetooth Connection" TextColor="{StaticResource EggYellow}" FontSize="22" VerticalOptions="CenterAndExpand" 
+                           HorizontalOptions="CenterAndExpand"/>
+                </Grid>
+                <ListView x:Name="devicesList" Grid.Row="1" ItemTapped="ListView_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" TextColor="{StaticResource EggYellow}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Grid Grid.Row="2" Margin="5">
+                    <Button x:Name="DisconnectButton" 
+                            Text="Disconnect" CornerRadius="10" FontSize="28" FontAttributes="Bold" Margin="20,5,20,5" IsEnabled="False"
+                            Clicked="DisconnectButton_Clicked" Style="{StaticResource ButtonStyle}"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
