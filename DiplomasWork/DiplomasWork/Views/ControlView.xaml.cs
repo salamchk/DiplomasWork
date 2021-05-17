@@ -23,7 +23,6 @@ namespace DiplomasWork.Views
         public ControlView()
         {
             InitializeComponent();
-            Content.IsVisible = true;
             if (_connection == null)
             {
                 try
@@ -76,9 +75,6 @@ namespace DiplomasWork.Views
         private async void ImageButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
-            _connection.Disconect();
-            _connection = null;
-            _control = null;
         }
 
         private async void ImageButton_Clicked_1(object sender, EventArgs e)
@@ -181,7 +177,6 @@ namespace DiplomasWork.Views
                         Thread.Sleep(150);
                     }
                 });
-                _control.ToDirectPosition();
             }
             catch (Exception)
             {
@@ -207,7 +202,6 @@ namespace DiplomasWork.Views
                         Thread.Sleep(150);
                     }
                 });
-                _control.ToDirectPosition();
             }
             catch (Exception)
             {

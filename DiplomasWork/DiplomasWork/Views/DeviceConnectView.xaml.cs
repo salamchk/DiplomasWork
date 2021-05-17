@@ -22,7 +22,7 @@ namespace DiplomasWork.Views
             var searcher = DeviceSearcher.GetSearcher();
             searcher.Search();
             devicesList.ItemsSource = new ObservableCollection<Model.Device>(searcher.Devices);
-            if (_connection != null)
+            if (_connection != null && _connection.IsConnected)
             {
                 devicesList.IsEnabled = false;
                 DisconnectButton.IsEnabled = true;
@@ -43,10 +43,11 @@ namespace DiplomasWork.Views
         {
             try
             {
-                devicesList.IsEnabled = false;
+                
                 _connection = DeviceConnection.GetConnection((Model.Device)e.Item);
                 _connection.Connect();
-                DisconnectButton.IsEnabled = true;
+                DisconnectButton.IsEnabled = _connection.IsConnected;
+                devicesList.IsEnabled = !_connection.IsConnected;
             }
             catch (Exception)
             {
@@ -62,8 +63,8 @@ namespace DiplomasWork.Views
             try
             {
                 _connection.Disconect();
-                devicesList.IsEnabled = true;
                 DisconnectButton.IsEnabled = false;
+                devicesList.IsEnabled = true;
                 _connection = null;
             }
             catch (Exception)

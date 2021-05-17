@@ -32,7 +32,7 @@
                 </Grid>
                 
                 
-                <Grid Grid.Row="1" Margin="10" x:Name="Content" IsVisible="false">
+                <Grid Grid.Row="1" Margin="10" x:Name="Content">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="1*"/>

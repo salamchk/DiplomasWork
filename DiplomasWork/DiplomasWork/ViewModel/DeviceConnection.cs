@@ -20,6 +20,7 @@ namespace DiplomasWork.ViewModel
         private static UUID _uuid = UUID.FromString("00001101-0000-1000-8000-00805f9b34fb");
         private Stream _outStream;
 
+        public bool IsConnected { get => _socket.IsConnected; }
 
         public static DeviceConnection GetConnection(Model.Device device)
         {

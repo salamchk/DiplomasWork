@@ -68,6 +68,7 @@ namespace DiplomasWork.Views
         {
             try
             {
+                MaxLeft.Value = Math.Round(MaxLeft.Value);
                 _control.ConfigureAngle(Model.Command.MaxTurnLeft, (int)MaxLeft.Value);
             }
             catch(Exception)
@@ -80,6 +81,7 @@ namespace DiplomasWork.Views
         {
             try
             {
+                MaxRight.Value = Math.Round(MaxRight.Value);
                 _control.ConfigureAngle(Model.Command.MaxTurnRight, (int)MaxRight.Value);
             }
             catch (Exception)
@@ -92,6 +94,7 @@ namespace DiplomasWork.Views
         {
             try
             {
+                DirectPosition.Value = Math.Round(DirectPosition.Value);
                 _control.ConfigureAngle(Model.Command.DirectPosition, (int)DirectPosition.Value);
             }
             catch (Exception)
